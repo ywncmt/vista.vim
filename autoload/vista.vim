@@ -108,7 +108,7 @@ function! vista#(bang, ...) abort
     elseif a:1 ==# 'finder!'
       call vista#finder#fzf#ProjectRun()
     elseif a:1 ==# 'toc'
-      if &filetype ==# 'markdown'
+      if &filetype ==# 'markdown' || &filetype ==# 'pandoc'
         call vista#extension#markdown#Execute(v:false, v:true)
       else
         return vista#error#For('Vista toc', 'markdown')
